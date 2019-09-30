@@ -42,7 +42,7 @@ public class PedidoFinalizado implements Ecommerce{
 	public Ecommerce finalizado(int finalizado) {
 		infoEstado();
 		if(finalizado == 1) {
-			System.out.println("Compra concluida com sucesso! Obrigado pela preferencia!");
+			System.out.println("Compra concluida com sucesso! Agradecemos a preferência!");
 		} else {
 			System.out.println("Pedido finalizado, compra cancelada!");
 		}

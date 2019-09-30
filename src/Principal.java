@@ -1,4 +1,4 @@
-import Pedido.Pedido;
+import pedido.Pedido;
 import states.PedidoPronto;
 
 public class Principal {

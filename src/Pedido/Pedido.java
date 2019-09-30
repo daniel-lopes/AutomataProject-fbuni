@@ -1,4 +1,4 @@
-package Pedido;
+package pedido;
 import interfaces.Ecommerce;
 
 public class Pedido {
