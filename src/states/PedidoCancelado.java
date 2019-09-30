@@ -43,7 +43,7 @@ public class PedidoCancelado implements Ecommerce {
 		if(pergunta(confirmacao)) {
 			return new PedidoFinalizado(0);
 		}
-		return new PedidoNovo();
+		return new PedidoPronto();
 	}
 
 	@Override
@@ -54,7 +54,6 @@ public class PedidoCancelado implements Ecommerce {
 
 	@Override
 	public boolean pergunta(String confirmacao) {
-		// TODO Auto-generated method stub
 		System.out.println(confirmacao);
 		ler = new Scanner(System.in);
 		String resposta = ler.nextLine();
@@ -67,6 +66,24 @@ public class PedidoCancelado implements Ecommerce {
 	@Override
 	public void infoEstado() {
 		System.out.println("Estado = Pedido Cancelado");
+	}
+
+	@Override
+	public Ecommerce pronto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce devolucao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce reembolso() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

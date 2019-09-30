@@ -42,7 +42,7 @@ public class PedidoFinalizado implements Ecommerce{
 	public Ecommerce finalizado(int finalizado) {
 		infoEstado();
 		if(finalizado == 1) {
-			System.out.println("Pedido finalizado, obrigado pela compra!");
+			System.out.println("Compra concluida com sucesso! Obrigado pela preferencia!");
 		} else {
 			System.out.println("Pedido finalizado, compra cancelada!");
 		}
@@ -58,6 +58,24 @@ public class PedidoFinalizado implements Ecommerce{
 	@Override
 	public void infoEstado() {
 		System.out.println("Estado = Pedido Finalizado");
+	}
+
+	@Override
+	public Ecommerce pronto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce devolucao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce reembolso() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

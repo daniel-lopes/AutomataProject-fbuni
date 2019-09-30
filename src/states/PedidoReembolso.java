@@ -1,14 +1,21 @@
 package states;
 import java.util.Scanner;
+
 import interfaces.Ecommerce;
 
-public class PedidoAprovado implements Ecommerce {
+public class PedidoReembolso implements Ecommerce {
 
 	private Scanner ler;
-	
-	public PedidoAprovado() {
+
+	public PedidoReembolso() {
 		super();
-		aprovado();
+		reembolso();
+	}
+	
+	@Override
+	public Ecommerce pronto() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -19,12 +26,8 @@ public class PedidoAprovado implements Ecommerce {
 
 	@Override
 	public Ecommerce aprovado() {
-		infoEstado();
-		String confirmacao = "Tudo certo com o seu pedido! Podemos enviar?";
-		if(pergunta(confirmacao)) {
-			return new PedidoTransporte();
-		}
-		return new PedidoCancelado();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -52,6 +55,24 @@ public class PedidoAprovado implements Ecommerce {
 	}
 
 	@Override
+	public Ecommerce devolucao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce reembolso() {
+		infoEstado();
+		String confirmacao = "O produto chegou danificado?";
+		if(pergunta(confirmacao)) {
+			System.out.println("Lamentamos o ocorrido, será debitado 100% do valor na sua conta");
+			return this;
+		}
+		System.out.println("Lamentamos o ocorrido, será debitado 50% do valor na sua conta");
+		return this;
+	}
+
+	@Override
 	public boolean pergunta(String confirmacao) {
 		System.out.println(confirmacao);
 		ler = new Scanner(System.in);
@@ -64,25 +85,7 @@ public class PedidoAprovado implements Ecommerce {
 
 	@Override
 	public void infoEstado() {
-		System.out.println("Estado = Pedido Aprovado");
+		System.out.println("Estado = Pedido Reembolso");		
 	}
 
-	@Override
-	public Ecommerce pronto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Ecommerce devolucao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Ecommerce reembolso() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }

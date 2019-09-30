@@ -1,14 +1,25 @@
 package states;
 import java.util.Scanner;
+
 import interfaces.Ecommerce;
 
-public class PedidoAprovado implements Ecommerce {
+public class PedidoPronto implements Ecommerce {
 
 	private Scanner ler;
 	
-	public PedidoAprovado() {
+	public PedidoPronto() {
 		super();
-		aprovado();
+		pronto();
+	}
+
+	@Override
+	public Ecommerce pronto() {
+		infoEstado();
+		String confirmacao = "Deseja adicionar seu produto ao carrinho?";
+		if(pergunta(confirmacao)) {
+			return new PedidoNovo();
+		}
+		return new PedidoCancelado();
 	}
 
 	@Override
@@ -19,12 +30,8 @@ public class PedidoAprovado implements Ecommerce {
 
 	@Override
 	public Ecommerce aprovado() {
-		infoEstado();
-		String confirmacao = "Tudo certo com o seu pedido! Podemos enviar?";
-		if(pergunta(confirmacao)) {
-			return new PedidoTransporte();
-		}
-		return new PedidoCancelado();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -52,6 +59,18 @@ public class PedidoAprovado implements Ecommerce {
 	}
 
 	@Override
+	public Ecommerce devolucao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce reembolso() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public boolean pergunta(String confirmacao) {
 		System.out.println(confirmacao);
 		ler = new Scanner(System.in);
@@ -64,25 +83,7 @@ public class PedidoAprovado implements Ecommerce {
 
 	@Override
 	public void infoEstado() {
-		System.out.println("Estado = Pedido Aprovado");
-	}
-
-	@Override
-	public Ecommerce pronto() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Ecommerce devolucao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Ecommerce reembolso() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Estado = Pedido Pronto");
 	}
 	
 }

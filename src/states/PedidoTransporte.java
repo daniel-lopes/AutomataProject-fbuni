@@ -56,4 +56,22 @@ public class PedidoTransporte implements Ecommerce{
 		System.out.println("Estado = Pedido em Transporte");
 	}
 
+	@Override
+	public Ecommerce pronto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce devolucao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ecommerce reembolso() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
